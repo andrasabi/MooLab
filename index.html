@@ -68,10 +68,12 @@ html,body{min-height:100vh;font-family:var(--fn);color:var(--tx);}
 .mcard .nm{font-size:18px;font-weight:900;margin-bottom:6px;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.2);}
 .mcard .ds{font-size:13px;color:rgba(255,255,255,.82);line-height:1.55;font-weight:600;}
 
-/* role cards */
-.rgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-bottom:44px;}
+/* role cards - square boxes */
+.rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:44px;}
 .rcard{
-  border-radius:24px;padding:26px 12px 20px;
+  border-radius:24px;padding:20px 14px;
+  aspect-ratio:1/1;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
   cursor:pointer;text-align:center;
   transition:all .25s;
   position:relative;overflow:hidden;
@@ -87,6 +89,7 @@ html,body{min-height:100vh;font-family:var(--fn);color:var(--tx);}
 .rc-farmer{background:linear-gradient(145deg,rgba(230,81,0,.7),rgba(191,54,12,.8));}
 .rc-quality{background:linear-gradient(145deg,rgba(123,31,162,.7),rgba(74,20,140,.8));}
 .rc-digital{background:linear-gradient(145deg,rgba(0,131,143,.7),rgba(0,96,100,.8));}
+.rc-ai{background:linear-gradient(145deg,rgba(216,27,96,.72),rgba(136,14,79,.82));}
 
 .rcard:hover{
   transform:translateY(-8px) scale(1.05);
@@ -112,6 +115,8 @@ html,body{min-height:100vh;font-family:var(--fn);color:var(--tx);}
 .rc-farmer .rcard-ico-wrap{background:radial-gradient(circle at 35% 35%,#FFD54F,#E65100);}
 .rc-quality .rcard-ico-wrap{background:radial-gradient(circle at 35% 35%,#E1BEE7,#7B1FA2);}
 .rc-digital .rcard-ico-wrap{background:radial-gradient(circle at 35% 35%,#B2EBF2,#006064);}
+.rc-ai .rcard-ico-wrap{background:radial-gradient(circle at 35% 35%,#F8BBD0,#AD1457);}
+.rcard .rcard-ico-wrap{margin-bottom:12px;}
 .rcard .nm{font-size:14px;font-weight:900;color:#fff;margin-bottom:5px;line-height:1.3;text-shadow:0 1px 4px rgba(0,0,0,.3);}
 .rcard .ds{font-size:11px;color:rgba(255,255,255,.78);line-height:1.45;font-weight:600;}
 
@@ -136,8 +141,12 @@ html,body{min-height:100vh;font-family:var(--fn);color:var(--tx);}
 .mi{max-width:860px;margin:0 auto;padding:20px 24px 60px;}
 
 .topbar{display:flex;align-items:center;gap:10px;padding:14px 20px;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-radius:18px;margin-bottom:16px;box-shadow:0 4px 20px rgba(15,110,86,.12);flex-wrap:wrap;}
-.tlogo{font-size:20px;font-weight:900;color:var(--grd);display:flex;align-items:center;gap:8px;}
-.tlogo-ico{width:34px;height:34px;background:linear-gradient(135deg,#25C48A,#0F6E56);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:18px;}
+.tlogo{font-size:27px;font-weight:900;color:var(--grd);display:flex;align-items:center;gap:11px;cursor:pointer;transition:transform .15s;user-select:none;}
+.tlogo:hover{transform:scale(1.04);}
+.tlogo:active{transform:scale(.98);}
+.tlogo-ico{width:48px;height:48px;background:linear-gradient(135deg,#25C48A,#0F6E56);border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:27px;box-shadow:0 4px 14px rgba(15,110,86,.35);}
+.homebtn{border:2px solid var(--br);border-radius:99px;padding:7px 15px;font-size:13px;font-weight:800;cursor:pointer;background:rgba(255,255,255,.85);color:var(--grd);font-family:var(--fn);transition:all .15s;}
+.homebtn:hover{background:var(--gr);color:#fff;border-color:var(--gr);}
 .pill{font-size:12px;font-weight:700;padding:4px 13px;border-radius:99px;}
 .pg{background:var(--grl);color:var(--grd);}.pb{background:var(--bll);color:var(--bl);}
 .tabs{display:flex;gap:6px;margin-left:auto;flex-wrap:wrap;}
@@ -181,7 +190,9 @@ html,body{min-height:100vh;font-family:var(--fn);color:var(--tx);}
 .sctit{font-size:20px;font-weight:900;color:#fff;margin-bottom:4px;}
 .scsub{font-size:13px;color:rgba(255,255,255,.75);}
 .scbadge{display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,.22);color:#fff;font-size:12px;font-weight:700;padding:4px 12px;border-radius:99px;margin-top:8px;}
-.scbody{padding:22px;}
+.scbody{padding:22px;position:relative;
+  background:linear-gradient(rgba(255,255,255,.94),rgba(255,255,255,.965)),
+    url('https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=1200&q=70') center 35%/cover no-repeat;}
 .scsec{margin-bottom:18px;}
 .sclbl{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:2px;color:var(--gr);margin-bottom:10px;}
 .sctxt{font-size:17px;color:var(--t2);line-height:1.8;font-weight:600;}
@@ -198,8 +209,10 @@ html,body{min-height:100vh;font-family:var(--fn);color:var(--tx);}
 .outbox{padding:16px 18px;border-radius:12px;font-size:15px;line-height:1.75;margin-top:12px;font-weight:600;}
 .outok{background:#EAF3DE;color:#1A4008;border-left:5px solid #639922;}
 .outno{background:var(--rdl);color:#5A1010;border-left:5px solid var(--rd);}
-.scnav{display:flex;gap:10px;align-items:center;margin-top:12px;}
-.dots{display:flex;gap:8px;margin-left:auto;}
+.scnav{display:flex;gap:12px;align-items:center;margin-top:12px;flex-wrap:wrap;}
+.scnav-btns{display:flex;gap:10px;order:1;}
+.dots{display:flex;gap:8px;margin-left:auto;order:2;flex-wrap:wrap;justify-content:center;}
+.tabfoot{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:18px;}
 .dot{width:11px;height:11px;border-radius:50%;background:var(--br);cursor:pointer;transition:all .2s;display:inline-block;}
 .dcur{background:var(--gr);transform:scale(1.5);box-shadow:0 0 0 3px rgba(29,158,117,.25);}
 .dok2{background:var(--gr);}.dno2{background:var(--rd);}
@@ -211,6 +224,18 @@ html,body{min-height:100vh;font-family:var(--fn);color:var(--tx);}
 .ig{background:#EAF3DE;color:#3B6D11;}.ia{background:var(--aml);color:var(--am);}.ib{background:var(--bll);color:var(--bl);}.it{background:var(--tll);color:var(--tl);}.ir{background:var(--rdl);color:var(--rd);}
 .ibody{font-size:16px;color:var(--t2);line-height:1.85;font-weight:600;}
 .ibody b{font-weight:800;color:var(--tx);}
+.iimg{width:100%;max-height:200px;object-fit:cover;border-radius:13px;margin-bottom:14px;box-shadow:0 4px 16px rgba(15,110,86,.15);}
+.iguide{background:var(--grl);border-left:4px solid var(--gr);border-radius:10px;padding:11px 15px;font-size:14px;margin-top:12px;font-weight:600;color:var(--grd);}
+.iref{display:block;font-size:12px;color:var(--t3);font-weight:700;margin-top:10px;font-style:italic;}
+.econgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:12px 0;}
+.econ{background:var(--bg);border:1.5px solid var(--br);border-radius:12px;padding:12px;text-align:center;}
+.econ .ev{font-size:20px;font-weight:900;color:var(--grd);font-family:'DM Mono',monospace;}
+.econ .el{font-size:12px;color:var(--t3);font-weight:700;margin-top:4px;line-height:1.3;}
+.barlist{list-style:none;margin:8px 0 0;padding:0;}
+.barlist li{padding:9px 0 9px 30px;position:relative;border-bottom:1px solid var(--br);font-size:15px;line-height:1.6;}
+.barlist li:last-child{border-bottom:none;}
+.barlist li::before{content:'\26A0';position:absolute;left:0;top:8px;color:var(--am);font-size:15px;}
+.barlist b{color:var(--tx);font-weight:800;}
 
 .tgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;}
 .tcard{background:rgba(255,255,255,.97);border:1.5px solid var(--br);border-radius:16px;padding:16px;box-shadow:0 4px 20px rgba(15,110,86,.08);}
@@ -242,14 +267,23 @@ html,body{min-height:100vh;font-family:var(--fn);color:var(--tx);}
 .btnp:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(15,110,86,.4);}
 .btns{background:rgba(255,255,255,.9);color:var(--tx);border:2px solid var(--br);border-radius:99px;padding:11px 22px;font-size:14px;font-weight:700;cursor:pointer;font-family:var(--fn);transition:all .15s;}
 .btns:hover{border-color:var(--gr);color:var(--grd);}
+.btns:disabled,.btnp:disabled{opacity:.38;cursor:not-allowed;}
+.btns:disabled:hover{border-color:var(--br);color:var(--tx);}
+.btnp:disabled:hover{transform:none;box-shadow:0 4px 16px rgba(15,110,86,.2);}
 
 @media(max-width:600px){
-  .rgrid{grid-template-columns:repeat(3,1fr);}
+  .rgrid{grid-template-columns:repeat(2,1fr);}
   .mgrid{grid-template-columns:repeat(1,1fr);}
   .hud{grid-template-columns:repeat(2,1fr);}
   .tabs{gap:4px;}.tab{padding:5px 10px;font-size:12px;}
   .logo-title{font-size:3.2rem;}
   .logo-emblem{width:80px;height:80px;font-size:38px;}
+  .scnav{flex-direction:column;align-items:stretch;}
+  .scnav-btns{order:2;justify-content:center;}
+  .scnav-btns .btns,.scnav-btns .btnp{flex:1;}
+  .dots{order:1;margin:0 0 8px;justify-content:center;}
+  .tlogo{font-size:22px;}.tlogo-ico{width:40px;height:40px;font-size:22px;}
+  .homebtn{padding:6px 12px;font-size:12px;}
 }
 </style>
 </head>
@@ -296,7 +330,7 @@ html,body{min-height:100vh;font-family:var(--fn);color:var(--tx);}
       <div class="ds">Nutritie, productie, parametri tehnici</div>
     </div>
     <div class="rcard rc-farmer" id="RC2" onclick="R(2)">
-      <div class="rcard-ico-wrap">&#129321;</div>
+      <div class="rcard-ico-wrap">&#128668;</div>
       <div class="nm">Fermier</div>
       <div class="ds">Management ferma si decizii economice</div>
     </div>
@@ -310,6 +344,11 @@ html,body{min-height:100vh;font-family:var(--fn);color:var(--tx);}
       <div class="nm">Specialist PLF</div>
       <div class="ds">Senzori, date, zootehnie de precizie</div>
     </div>
+    <div class="rcard rc-ai" id="RC5" onclick="R(5)">
+      <div class="rcard-ico-wrap">&#129516;</div>
+      <div class="nm">Operator insamantari</div>
+      <div class="ds">Insamantare artificiala, material seminal congelat</div>
+    </div>
   </div>
 
   <button class="btn-go" id="BG" disabled onclick="GO()">&#127968; Intra in ferma &#8594;</button>
@@ -319,7 +358,8 @@ html,body{min-height:100vh;font-family:var(--fn);color:var(--tx);}
 <div id="B" class="gone">
 <div class="mi">
   <div class="topbar">
-    <div class="tlogo"><div class="tlogo-ico">&#128004;</div>MooLab</div>
+    <div class="tlogo" onclick="HOME()" title="Inapoi la ecranul principal"><div class="tlogo-ico">&#128004;</div>MooLab</div>
+    <button class="homebtn" onclick="HOME()">&#127968; Acasa</button>
     <span class="pill pg" id="PR">-</span>
     <span class="pill pb" id="PM">-</span>
     <div class="tabs">
@@ -331,8 +371,8 @@ html,body{min-height:100vh;font-family:var(--fn);color:var(--tx);}
   </div>
   <div class="hud">
     <div class="hcell"><div class="hlbl">&#11088; Puncte</div><div class="hval g" id="HP">0</div></div>
-    <div class="hcell"><div class="hlbl">&#129504; Quiz</div><div class="hval" id="HQ">0/12</div></div>
-    <div class="hcell"><div class="hlbl">&#128300; Scenarii</div><div class="hval" id="HS">0/10</div></div>
+    <div class="hcell"><div class="hlbl">&#129504; Quiz</div><div class="hval" id="HQ">0/15</div></div>
+    <div class="hcell"><div class="hlbl">&#128300; Scenarii</div><div class="hval" id="HS">0/11</div></div>
     <div class="hcell"><div class="hlbl">&#127777; THI ferma</div><div class="hval a" id="HT">72</div></div>
   </div>
 
@@ -340,8 +380,8 @@ html,body{min-height:100vh;font-family:var(--fn);color:var(--tx);}
     <div class="prog"><div class="progbar" id="QPB" style="width:0%"></div></div>
     <div id="QA"></div>
     <div class="qnav">
-      <button class="btns" onclick="pQ()">&#8592; Anterior</button>
-      <button class="btnp" onclick="nQ()">Urmator &#8594;</button>
+      <button class="btns" id="QPREV" onclick="pQ()">&#8592; Anterior</button>
+      <button class="btnp" id="QNEXT" onclick="nQ()">Urmator &#8594;</button>
       <button class="btns" style="margin-left:auto" onclick="RES()">&#128202; Rezultate</button>
     </div>
   </div>
@@ -349,24 +389,37 @@ html,body{min-height:100vh;font-family:var(--fn);color:var(--tx);}
   <div id="PS" class="gone">
     <div id="SA"></div>
     <div class="scnav">
-      <button class="btns" onclick="pS()">&#8592; Anterior</button>
-      <button class="btnp" onclick="nS()">Urmator &#8594;</button>
       <div class="dots" id="DOT"></div>
+      <div class="scnav-btns">
+        <button class="btns" id="SPREV" onclick="pS()">&#8592; Anterior</button>
+        <button class="btnp" id="SNEXT" onclick="nS()">Urmator &#8594;</button>
+      </div>
     </div>
   </div>
 
   <div id="PI" class="gone">
-    <div class="icard"><div class="itit">&#127777; Stres termic bovin - Indicele THI</div><div class="itags"><span class="itag ig">THI &lt;68 confort</span><span class="itag ia">68-72 alerta</span><span class="itag ir">THI &gt;78 sever</span></div><div class="ibody">Formula: <b>THI = T(C) + 0.36 x Td(C) + 41.2</b>. Vacile Holstein sunt sensibile datorita metabolismului ridicat. <b>Semne:</b> respiratie &gt;60/min, productie -10-35%, consum apa +40-60%. <b>Interventii:</b> aspersoare + ventilatie fortata, bicarbonat sodiu 150-200 g/cap/zi, hranire nocturna. <b>Sisteme PLF:</b> senzorii montati pe animale detecteaza modificarile comportamentale cu 1-2 ore inainte de semnele vizibile; sistemele avansate transmit date la 15 minute.</div></div>
-    <div class="icard"><div class="itit">&#128225; Zootehnie de precizie (PLF)</div><div class="itags"><span class="itag it">Senzori individuali</span><span class="itag ib">AI/ML</span><span class="itag it">Date timp real</span></div><div class="ibody"><b>Tipuri senzori:</b> zgarda/colier cu accelerometru si giroscop, pedometru (senzor copita), bolus ruminal (temperatura interna, pH), transponder ureche, camera termoviziune. <b>Parametri:</b> activitate fizica (pasi/ora), rumegare normala 450-600 min/zi, detectie estrus (+200-300%), alerte metabolice cu 12-24 ore avans. <b>Beneficii:</b> pierderi productie -8-14%, detectie estrus 80-95% acuratete. Sisteme comerciale integrate cu software de management al fermei.</div></div>
+    <div class="icard"><div class="itit">&#127777; Stres termic bovin - Indicele THI</div><img class="iimg" src="https://images.unsplash.com/photo-1516467508483-a7212febe31a?w=1000&q=75" alt="Vaci Holstein in adapost - management stres termic" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=1000&q=75'"><div class="itags"><span class="itag ig">THI &lt;68 confort</span><span class="itag ia">68-72 alerta</span><span class="itag ir">THI &gt;78 sever</span></div><div class="ibody">Formula: <b>THI = T(C) + 0.36 x Td(C) + 41.2</b>. Vacile Holstein sunt sensibile datorita metabolismului ridicat. <b>Semne:</b> respiratie &gt;60/min, productie -10-35%, consum apa +40-60%. <b>Interventii:</b> aspersoare + ventilatie fortata, bicarbonat sodiu 150-200 g/cap/zi, hranire nocturna. <b>Sisteme PLF:</b> senzorii montati pe animale detecteaza modificarile comportamentale cu 1-2 ore inainte de semnele vizibile; sistemele avansate transmit date la 15 minute.<div class="iguide">&#128214; <b>Ghid practic THI (din ghidul autorului):</b> masurati THI de 2x/zi in sezonul cald (pranz si dupa-amiaza). Pragul de actiune incepe la <b>THI 68</b>: porniti ventilatia. La <b>THI &gt;72</b> activati aspersoarele intermitent (cicluri 3 min apa / 12 min ventilatie). La <b>THI &gt;78</b> aplicati toate masurile + hranire nocturna si umbrire suplimentara. Monitorizati scorul de garbare (panting score 0-4).</div><span class="iref">Sursa: Neculai-Valeanu A.-S. (2025), "Transformarea digitala a fermelor mici si mijlocii de vaci de lapte", Presa Universitara Clujeana.</span></div></div>
+    <div class="icard"><div class="itit">&#128225; Zootehnie de precizie (PLF)</div><div class="itags"><span class="itag it">Senzori individuali</span><span class="itag ib">AI/ML</span><span class="itag it">Date timp real</span></div><div class="ibody"><b>Tipuri senzori:</b> zgarda/colier cu accelerometru si giroscop, pedometru (senzor onglon), bolus ruminal (temperatura interna, pH), transponder ureche, camera termoviziune. <b>Parametri:</b> activitate fizica (pasi/ora), rumegare normala 450-600 min/zi, detectie estrus (+200-300%), alerte metabolice cu 12-24 ore avans. <b>Beneficii:</b> pierderi productie -8-14%, detectie estrus 80-95% acuratete. Sisteme comerciale integrate cu software de management al fermei.</div></div>
     <div class="icard"><div class="itit">&#128004; Bunastarea animalelor - Cele 5 Libertati</div><div class="ibody"><b>1.</b> Libertatea de foame si sete - ratie echilibrata, apa proaspata permanent<br><b>2.</b> Libertatea de disconfort - adapost adecvat, zone odihna (&gt;1.2 m2/vaca)<br><b>3.</b> Libertatea de durere si boala - prevenire activa, diagnostic rapid<br><b>4.</b> Libertatea de a exprima comportamente normale - miscare libera, socializare<br><b>5.</b> Libertatea de frica si suferinta mentala - conditii fara stres cronic<br><br><b>Indicatori:</b> BCS 2.5-3.5, IEF &lt;390 zile, mastita &lt;5%, scor locomotor grad 3+ &lt;10%.</div></div>
     <div class="icard"><div class="itit">&#129371; Calitatea laptelui - parametri UE</div><div class="ibody"><b>NCS:</b> &lt;100k/mL excelent - &lt;200k bun - 200-400k alerta - &gt;400k mastita subclinica (limita legala UE)<br><b>NTB:</b> &lt;100k/mL Clasa Extra; &lt;400k/mL Clasa I | <b>Grasime:</b> 3.5-4.5% Holstein<br><b>Proteina:</b> 3.1-3.5% | <b>Uree lapte:</b> 150-300 mg/L (echilibru proteino-energetic)</div></div>
     <div class="icard"><div class="itit">&#128137; Boli metabolice periparturiente</div><div class="itags"><span class="itag ir">Cetoza</span><span class="itag ir">Hipocalcemie</span><span class="itag ia">Distocie</span><span class="itag ir">Deplasare cheag</span></div><div class="ibody"><b>Cetoza subclinica:</b> BHBA &gt;1.0 mmol/L. Tratament: propilen glicol 300 mL/zi x 5 zile. Preventie: BCS &lt;=3.5 la fatare.<br><b>Hipocalcemie:</b> Ca &lt;1.75 mmol/L. Simptome: decubit, hipotermie. Tratament: Ca borogluconat IV LENT 400-800 mL.<br><b>Deplasare cheag stanga:</b> sunet metalic la percu-tie (ping). Interventie chirurgicala - omentopexie.</div></div>
+
+    <div class="icard"><div class="itit">&#129516; Insamantare artificiala &amp; material seminal congelat</div><img class="iimg" src="https://images.unsplash.com/photo-1605605575998-9e7a8c4c9c0a?w=1000&q=75" alt="Reproductie bovina - insamantare artificiala" onerror="this.style.display='none'"><div class="itags"><span class="itag ib">Reproductie</span><span class="itag it">Genetica</span><span class="itag ig">Biosecuritate</span></div><div class="ibody"><b>Insamantarea artificiala (IA)</b> este principala metoda de ameliorare genetica si control sanitar al reproductiei in fermele moderne. Permite folosirea materialului seminal de la tauri amelioratori testati, fara riscul transmiterii bolilor venerice.<br><br><b>Material seminal congelat:</b> pastrat in azot lichid la <b>-196&deg;C</b> in paiete de 0,25 mL. Decongelare corecta: 30-40 secunde in baie de apa la <b>35-37&deg;C</b>. Folositi imediat (in max. 15 min); nu reutilizati paietele decongelate.<br><br><b>Momentul optim (regula AM-PM):</b> vaci observate in calduri dimineata se insamanteaza seara; cele observate seara, a doua zi dimineata. Ovulatia are loc la ~24-32 ore de la debutul estrului. <b>Tehnica recto-cervicala:</b> depunerea semintei in corpul uterin, imediat dupa cervix.<br><br><b>Detectie estru cu senzori PLF:</b> cresterea activitatii cu +200-300% semnaleaza fereastra de insamantare cu 80-95% acuratete - baza protocoalelor de <b>insamantare la moment fix (Ovsynch, TAI)</b>.<div class="iguide">&#129351; <b>KPI reproductie:</b> rata de conceptie la prima IA &gt;40%, indice de insamantare &lt;2,0, IEF 365-390 zile. Rata de detectie a estrului &gt;70% (cu senzori 80-95%).</div></div></div>
+
+    <div class="icard"><div class="itit">&#128679; Bariere in adoptarea tehnologiilor digitale</div><div class="itags"><span class="itag ir">Cercetare AOSR</span><span class="itag ia">Ferme mici si mijlocii</span></div><div class="ibody">Investigatie calitativa in fermele romanesti de vaci de lapte a identificat urmatoarele bariere principale in adoptarea solutiilor digitale/inteligente:<ul class="barlist"><li><b>Costul ridicat al investitiei initiale</b> - bariera de capital de ~30.000-36.000 lei (coliere, gateway, software, training); raport cost-beneficiu perceput ca incert.</li><li><b>Acces precar la internet in mediul rural</b> - ~70% din zonele rurale sunt subacoperite sau cu acces limitat la internet de mare viteza.</li><li><b>Lipsa interoperabilitatii</b> intre echipamente si sisteme software de la furnizori diferiti.</li><li><b>Lipsa competentelor digitale</b> si a suportului/instruirii tehnice in randul personalului.</li><li><b>Reticenta si rezistenta la schimbare</b> - bariere cognitive si culturale, lipsa unei imagini de ansamblu asupra performantei.</li><li><b>Infrastructura invechita</b> si lipsa unui cadru clar de reglementare privind datele proprietare.</li></ul><div class="iguide">&#128161; <b>Cum se depasesc:</b> finantare nerambursabila (granturi 50-85%), solutii modulare cu amortizare in timp, formare prin parteneriate cu centre de cercetare si universitati, pilotare la scara mica inainte de extindere.</div><span class="iref">Sursa: Proiect AOSR - "Transformarea digitala a fermelor mici si mijlocii de vaci de lapte" (Neculai-Valeanu A.-S.).</span></div></div>
+
+    <div class="icard"><div class="itit">&#128176; Analiza economica a digitalizarii fermei</div><div class="itags"><span class="itag ig">Cost-beneficiu</span><span class="itag ib">Finantare</span><span class="itag it">ROI</span></div><div class="ibody">Analiza cost-beneficiu realizata in cadrul proiectului AOSR pentru o ferma mijlocie cu tehnologii PLF (coliere inteligente + software de management):<div class="econgrid"><div class="econ"><div class="ev">~35.900 lei</div><div class="el">Investitie initiala (echipamente + software + training)</div></div><div class="econ"><div class="ev">&lt; 1 an</div><div class="el">Perioada de recuperare a investitiei</div></div><div class="econ"><div class="ev">-50-70%</div><div class="el">Reducere consum antibiotice</div></div><div class="econ"><div class="ev">-8-14%</div><div class="el">Reducere emisii CO&#8322;e / litru lapte</div></div></div><b>Surse de finantare nerambursabila:</b><br>&bull; <b>DR-14</b> "Investitii in fermele de mici dimensiuni" - pana la 50.000 &euro;/proiect, acoperire pana la 85% din cheltuielile eligibile.<br>&bull; <b>SM 4.1</b> "Investitii in exploatatii agricole" (PNDR 2023-2027) - 50% sprijin, plafon 300.000 &euro; (ferme mici).<br>&bull; <b>PNDR 6.1</b> "Instalare tineri fermieri" - 40.000-70.000 &euro; pentru fermieri &lt;40 ani.<br>&bull; <b>PAC 2023-2027</b> - masuri pentru agricultura inteligenta climatic (reducerea amprentei de carbon).<br><br><b>Beneficii cumulate:</b> crestere productie lapte, scaderea costurilor sanitar-veterinare si de forta de munca, valorificarea creditelor de carbon (~20 &euro;/t CO&#8322;e), evitarea costului de oportunitate al inactiunii.<div class="iguide">&#128202; Combinarea granturilor (DR-14, SM 4.1) cu credite garantate (FNGCIMM) reduce semnificativ perioada de amortizare si riscul financiar perceput.</div><span class="iref">Sursa: Raport Faza III, Proiect AOSR (Neculai-Valeanu A.-S.).</span></div></div>
+
+    <div class="tabfoot">
+      <button class="btns" onclick="HOME()">&#127968; Acasa</button>
+      <button class="btnp" onclick="ST('T')">&#128203; Vezi testele de laborator &#8594;</button>
+    </div>
   </div>
 
   <div id="PT" class="gone">
     <div class="tgrid">
       <div class="tcard"><div class="tnm">&#128300; California Mastitis Test</div><div class="tdet">Test rapid camp - precipitarea ADN din celulele somatice. Efectuat la fiecare muls suspect sau lunar preventiv.</div><div class="trows"><div class="trow"><span class="trl">Negativ</span><span class="trv" style="color:#1D9E75">Normal</span></div><div class="trow"><span class="trl">Slab pozitiv (+)</span><span class="trv" style="color:#BA7517">Suspiciune</span></div><div class="trow"><span class="trl">Pozitiv (++/+++)</span><span class="trv" style="color:#C0392B">Mastita confirmata</span></div><div class="trow"><span class="trl">Prag NCS</span><span class="trv">&gt;400.000/mL</span></div></div></div>
-      <div class="tcard"><div class="tnm">&#128208; BCS - Scor conditie corporala</div><div class="tdet">Evaluare vizuala si palpare, scala 1-5. Obligatoriu la fatare, varf lactatie si uscare.</div><div class="trows"><div class="trow"><span class="trl">La fatare</span><span class="trv">3.0-3.5</span></div><div class="trow"><span class="trl">Varf lactatie</span><span class="trv">2.5-3.0</span></div><div class="trow"><span class="trl">La uscare</span><span class="trv">3.0-3.5</span></div><div class="trow"><span class="trl">Pierdere max.</span><span class="trv">&lt;0.5 unitati</span></div></div></div>
+      <div class="tcard"><div class="tnm">&#128208; BCS - Scor conditie corporala</div><div class="tdet">Evaluare vizuala si palpare, scala 1-5. Obligatoriu la fatare, varf lactatie si intarcare.</div><div class="trows"><div class="trow"><span class="trl">La fatare</span><span class="trv">3.0-3.5</span></div><div class="trow"><span class="trl">Varf lactatie</span><span class="trv">2.5-3.0</span></div><div class="trow"><span class="trl">La intarcare</span><span class="trv">3.0-3.5</span></div><div class="trow"><span class="trl">Pierdere max.</span><span class="trv">&lt;0.5 unitati</span></div></div></div>
       <div class="tcard"><div class="tnm">&#129514; Profil metabolic sange</div><div class="tdet">Evaluare nutritionala turma. 6-10 vaci per grup, la 2-4 saptamani postpartum.</div><div class="trows"><div class="trow"><span class="trl">Glucoza</span><span class="trv">2.5-4.2 mmol/L</span></div><div class="trow"><span class="trl">BHBA</span><span class="trv">&lt;1.0 mmol/L</span></div><div class="trow"><span class="trl">NEFA</span><span class="trv">&lt;0.3 mmol/L</span></div><div class="trow"><span class="trl">Calciu total</span><span class="trv">2.1-2.8 mmol/L</span></div></div></div>
       <div class="tcard"><div class="tnm">&#127777; Calculator THI</div><div class="tdet">T + 0.36 x Td + 41.2. Calculat de 2x/zi in sezonul cald.</div><div class="trows"><div class="trow"><span class="trl">Confort</span><span class="trv" style="color:#1D9E75">&lt;68</span></div><div class="trow"><span class="trl">Alerta usoara</span><span class="trv" style="color:#BA7517">68-72</span></div><div class="trow"><span class="trl">Stres moderat</span><span class="trv" style="color:#BA7517">72-78</span></div><div class="trow"><span class="trl">Stres sever</span><span class="trv" style="color:#C0392B">&gt;78</span></div></div></div>
       <div class="tcard"><div class="tnm">&#128225; Monitoring senzori comportamentali</div><div class="tdet">Senzori pe animal - indicatori precoci ai bolii. Zgarda accelerometru, bolus ruminal, pedometru.</div><div class="trows"><div class="trow"><span class="trl">Rumegare normala</span><span class="trv" style="color:#1D9E75">450-600 min/zi</span></div><div class="trow"><span class="trl">Alerta medie</span><span class="trv" style="color:#BA7517">350-450 min/zi</span></div><div class="trow"><span class="trl">Alerta critica</span><span class="trv" style="color:#C0392B">&lt;350 min/zi</span></div><div class="trow"><span class="trl">Detectie estrus</span><span class="trv">+200-300%</span></div></div></div>
@@ -375,6 +428,11 @@ html,body{min-height:100vh;font-family:var(--fn);color:var(--tx);}
       <div class="tcard"><div class="tnm">&#129514; Analiza lapte individual</div><div class="tdet">Infrarosu (Fourier/MilkScan): grasime, proteina, lactoza, uree, NCS electronic, cetona.</div><div class="trows"><div class="trow"><span class="trl">Grasime Holstein</span><span class="trv">3.5-4.5%</span></div><div class="trow"><span class="trl">Proteina</span><span class="trv">3.1-3.5%</span></div><div class="trow"><span class="trl">Uree lapte</span><span class="trv">150-300 mg/L</span></div><div class="trow"><span class="trl">Lactoza</span><span class="trv">4.5-5.0%</span></div></div></div>
       <div class="tcard"><div class="tnm">&#128138; Test BHBA rapid</div><div class="tdet">Test rapid sange sau lapte. Screening obligatoriu la 3-7 zile postpartum.</div><div class="trows"><div class="trow"><span class="trl">Normal</span><span class="trv" style="color:#1D9E75">&lt;1.0 mmol/L</span></div><div class="trow"><span class="trl">Cetoza subclinica</span><span class="trv" style="color:#BA7517">1.0-3.0 mmol/L</span></div><div class="trow"><span class="trl">Cetoza clinica</span><span class="trv" style="color:#C0392B">&gt;3.0 mmol/L</span></div><div class="trow"><span class="trl">Prevalenta target</span><span class="trv">&lt;15% turma</span></div></div></div>
       <div class="tcard"><div class="tnm">&#9878; Test DCAD prepartum</div><div class="tdet">Diferenta cationi-anioni dieta (mEq/kg SU). Previne hipocalcemia prin acidifiere metabolica.</div><div class="trows"><div class="trow"><span class="trl">DCAD preventie</span><span class="trv" style="color:#1D9E75">-50 - -100 mEq/kg</span></div><div class="trow"><span class="trl">pH urina target</span><span class="trv">6.2-6.8</span></div><div class="trow"><span class="trl">Monitorizare</span><span class="trv">Zilnic 7-10 zile</span></div></div></div>
+    </div>
+    <div class="tabfoot">
+      <button class="btns" onclick="HOME()">&#127968; Acasa</button>
+      <button class="btns" onclick="ST('I')">&#128218; Informatii</button>
+      <button class="btnp" onclick="RES()">&#128202; Vezi rezultatele &#8594;</button>
     </div>
   </div>
 </div>
@@ -404,7 +462,7 @@ html,body{min-height:100vh;font-family:var(--fn);color:var(--tx);}
 var gM=-1,gR=-1,cQ=0,cS=0,sc=0;
 var qA=[],sA=[],hn=[];
 var MN=["Quiz rapid","Scenarii clinice","Complet"];
-var RN=["Medic veterinar","Ing. zootehnist","Fermier","Teh. calitate lapte","Specialist PLF"];
+var RN=["Medic veterinar","Ing. zootehnist","Fermier","Teh. calitate lapte","Specialist PLF","Operator insamantari artificiale"];
 var L=["A","B","C","D"];
 
 var Q=[
@@ -419,7 +477,10 @@ var Q=[
  {c:"Boli metabolice",d:2,p:15,h:"Mineralul care scade dramatic in primele ore dupa fatare.",q:"Cauza principala a febrei laptelui (milk fever) in primele 24 ore post-fatare:",o:["Deficit de magneziu","Hipocalcemie acuta (Ca sub 1.75 mmol/L)","Cetoza clinica","Acidoza ruminala"],a:1,e:"Hipocalcemia acuta apare cand mobilizarea Ca nu tine pasul cu productia de colostru. Tratament: Ca borogluconat IV LENT 400-800 mL - risc cardiac la injectare rapida!"},
  {c:"Digitalizare",d:1,p:10,h:"Gandeste-te la realitatea fermelor mici din Romania.",q:"Principala bariera a fermierilor din Romania fata de adoptarea tehnologiilor digitale:",o:["Lipsa internetului rural","Costul ridicat si raportul cost-beneficiu perceput","Lipsa animalelor potrivite","Opozitia medicilor veterinari"],a:1,e:"Costul ridicat si raportul cost-beneficiu perceput sunt principalele bariere. Sub 10% din fermele mici utilizeaza tehnologii digitale avansate."},
  {c:"Mastita",d:1,p:10,h:"Cel mai frecvent agent patogen contagios in mastita bovina.",q:"Care agent patogen cauzeaza mastita contagioasa cu rata de vindecare sub 25-30% si necesita cel mai frecvent reforma?",o:["Streptococcus uberis","Staphylococcus aureus","Escherichia coli","Klebsiella pneumoniae"],a:1,e:"Staph. aureus formeaza biofilm in glanda mamara, este rezistent la antibioterapie. Transmitere la muls. Vacile afectate sunt candidate principale la reforma."},
- {c:"Reproductie",d:2,p:15,h:"Hormonul care creste dramatic cu 200-300% inainte de ovulatie.",q:"Ce parametru masurat de senzorii comportamentali indica cel mai fidel apropierea ovulatiei la vaca?",o:["Scaderea temperaturii corporale","Cresterea activitatii fizice cu 200-300% fata de medie","Reducerea timpului de rumegare sub 400 min/zi","Cresterea consumului de furaje"],a:1,e:"Cresterea activitatii fizice (+200-300% fata de media individuala) este cel mai fidel indicator al estrului. Senzorii detecteaza estrusul cu 80-95% acuratete, fata de 50-60% prin observatie vizuala."}
+ {c:"Reproductie",d:2,p:15,h:"Hormonul care creste dramatic cu 200-300% inainte de ovulatie.",q:"Ce parametru masurat de senzorii comportamentali indica cel mai fidel apropierea ovulatiei la vaca?",o:["Scaderea temperaturii corporale","Cresterea activitatii fizice cu 200-300% fata de medie","Reducerea timpului de rumegare sub 400 min/zi","Cresterea consumului de furaje"],a:1,e:"Cresterea activitatii fizice (+200-300% fata de media individuala) este cel mai fidel indicator al estrului. Senzorii detecteaza estrusul cu 80-95% acuratete, fata de 50-60% prin observatie vizuala."},
+ {c:"Insamantare artificiala",d:1,p:10,h:"Azotul lichid mentine o temperatura extrem de scazuta.",q:"La ce temperatura se pastreaza materialul seminal congelat in paiete?",o:["-20 grade C in congelator","-80 grade C","-196 grade C in azot lichid","+4 grade C la frigider"],a:2,e:"Materialul seminal congelat se pastreaza in azot lichid la -196 grade C, in paiete de 0,25 mL. La aceasta temperatura spermatozoizii raman viabili practic nelimitat. Mentinerea nivelului de azot in container este esentiala."},
+ {c:"Insamantare artificiala",d:1,p:10,h:"Decongelarea prea rece sau prea calda distruge spermatozoizii.",q:"Cum se decongeleaza corect o paieta de material seminal inainte de insamantare?",o:["Se lasa la temperatura camerei 10 min","30-40 secunde in baie de apa la 35-37 grade C","Se incalzeste in pumn 5 minute","2 minute in apa la 50 grade C"],a:1,e:"Decongelare corecta: 30-40 secunde in baie de apa la 35-37 grade C. Paieta se foloseste imediat (in max. 15 min) si nu se reutilizeaza. Socul termic sau decongelarea lenta reduc drastic fertilitatea."},
+ {c:"Insamantare artificiala",d:2,p:15,h:"Regula leaga momentul observarii caldurilor de momentul insamantarii.",q:"Conform regulii AM-PM, o vaca observata in calduri seara se insamanteaza:",o:["Imediat, in aceeasi seara","A doua zi dimineata","Dupa 3 zile","Numai dupa confirmare ecografica"],a:1,e:"Regula AM-PM: caldurile observate seara - insamantare a doua zi dimineata; caldurile observate dimineata - insamantare in aceeasi seara. Ovulatia survine la ~24-32 ore de la debutul estrului, deci depunerea semintei spre finalul estrului maximizeaza fertilitatea."}
 ];
 
 var SC=[
@@ -431,7 +492,7 @@ var SC=[
    {t:"Cetoza subclinica - propilen glicol 300 mL/zi x 5 zile + ajustare ratie energetica",ok:1,o:"CORECT! BHBA = 2.1 mmol/L (normal sub 1.0) confirma cetoza subclinica. Scaderea rumegarii la 280 min/zi (normal 450-600) este semnalul precoce de la senzorul comportamental. Propilen glicol 300 mL/zi x 5 zile + cresterea aportului energetic. Fiecare zi netratata costa 1.5-2.5 L lapte/zi."},
    {t:"Mastita acuta - culturi bacteriene urgente + antibioterapie intramamara",ok:0,o:"INCORECT. NCS = 180.000/mL (normal) nu sustine mastita. BHBA ridicat si scaderea rumegarii indica cetoza metabolica."},
    {t:"Stres termic acut - activare racire + reducere densitate adapost",ok:0,o:"INCORECT. BHBA ridicat si rumegarea scazuta indica cetoza primara. Temperatura de 39.8 C nu este febra semnificativa."},
-   {t:"Laminta - examinare copite + antiinflamatoare nesteroidiene",ok:0,o:"INCORECT. Nu exista semne de modificare a mersului. Indicatorii de la senzorul comportamental nu arata modificarea tipica a laminitei."}
+   {t:"Laminta - examinare ongloane + antiinflamatoare nesteroidiene",ok:0,o:"INCORECT. Nu exista semne de modificare a mersului. Indicatorii de la senzorul comportamental nu arata modificarea tipica a laminitei."}
   ]},
  {t:"Caz 2 - Alerta stres termic sever",sb:"Fermier - Ing. zootehnist - Specialist PLF",bg:"Stres termic",
   cx:"August, ora 14:00. Temperatura: 36 C, umiditate: 65%, THI = 85. Datele de la senzorii comportamentali arata modificari generalizate - vacile stau grupate la adapatori si se misca mai putin. Productia a scazut cu 18%. Angajatul raporteaza respiratie rapida la majoritatea vacilor.",
@@ -471,7 +532,7 @@ var SC=[
    {t:"Calitate necorespunzatoare a noului siloz - analiza bromatologica urgenta + ajustare ratie",ok:1,o:"CORECT! Corelatie temporala perfecta: siloz nou introdus acum 12 zile - scadere productie si rumegare la nivel de turma. Silozul cu fermentatie deficitara are pH ridicat si valoare nutritiva redusa. Analiza bromatologica urgenta + ajustare ratie cu concentrate si tampon ruminal."},
    {t:"Mastita subclinica generalizata - campanie CMT",ok:0,o:"Posibil factor, dar nu explica scaderea simultana a rumegarii la intreaga turma. Cauza nutritionala este mult mai probabila."},
    {t:"Stres termic subclinic - verificare statia meteorologica",ok:0,o:"THI = 61 este in zona de confort termic complet. Nu exista impact documentat al stresului termic la THI sub 68."},
-   {t:"Probleme de copite - inspectie podologica urgenta",ok:0,o:"Laminita generalizata ar produce semne locomotorii vizibile. Modificarea rumegarii la intreaga turma simultan nu este caracteristica laminitei."}
+   {t:"Probleme de ongloane - inspectie podologica urgenta",ok:0,o:"Laminita generalizata ar produce semne locomotorii vizibile. Modificarea rumegarii la intreaga turma simultan nu este caracteristica laminitei."}
   ]},
  {t:"Caz 6 - Mastita clinica acuta",sb:"Medic veterinar - Teh. calitate lapte",bg:"Mastita",
   cx:"La mulsul de dimineata, vaca nr. 312 (Holstein, 5 ani, lactatia 4, 28 L/zi) are sfertul posterior drept umflat, cald si dureros la palpare. Laptele din sfertul afectat este apos, cu fulgi si striuri de sange. Vaca are febra si sta cu piciorul posterior usor abdus.",
@@ -483,15 +544,15 @@ var SC=[
    {t:"Observatie 24 ore fara tratament pentru a vedea evolutia spontana",ok:0,o:"GRESIT. Mastita clinica acuta cu febra 40.6 C necesita tratament imediat. Intarzierea creste riscul de mastita gangrenoasa si septicemie."},
    {t:"Aplicare comprese reci pe sfert + masaj + vitamina C",ok:0,o:"INSUFICIENT. Terapiile de suport pot complementa tratamentul, dar nu inlocuiesc antibioterapia tintita si mulsurile frecvente in mastita clinica acuta febrila."}
   ]},
- {t:"Caz 7 - Program de uscare: planificare",sb:"Medic veterinar - Ing. zootehnist - Fermier",bg:"Management",
-  cx:"Ferma are 120 vaci in program de uscare in urmatoarele 30 zile. Ultima analiza NCS: 23% din vaci au NCS individual peste 200.000/mL. Ferma a folosit tratament antibiotic la uscare la toate vacile (DCT blanket), dar noua legislatie UE restrictionaza aceasta practica.",
-  v:[{n:"Vaci uscare",v:"120 cap",c:"vg"},{n:"NCS ridicat",v:"23% vaci",c:"va"},{n:"Mastita clinica",v:"8% an",c:"va"},{n:"CMT pozitiv",v:"18% vaci",c:"va"},{n:"Lactatii medii",v:"3.2",c:"vg"},{n:"Legislatie UE",v:"In vigoare",c:"vr"}],
-  q:"Care este abordarea corecta a programului de uscare conform noilor reglementari UE?",
+ {t:"Caz 7 - Program de intarcare: planificare",sb:"Medic veterinar - Ing. zootehnist - Fermier",bg:"Management",
+  cx:"Ferma are 120 vaci in program de intarcare in urmatoarele 30 zile. Ultima analiza NCS: 23% din vaci au NCS individual peste 200.000/mL. Ferma a folosit tratament antibiotic la intarcare la toate vacile (DCT blanket), dar noua legislatie UE restrictionaza aceasta practica.",
+  v:[{n:"Vaci intarcare",v:"120 cap",c:"vg"},{n:"NCS ridicat",v:"23% vaci",c:"va"},{n:"Mastita clinica",v:"8% an",c:"va"},{n:"CMT pozitiv",v:"18% vaci",c:"va"},{n:"Lactatii medii",v:"3.2",c:"vg"},{n:"Legislatie UE",v:"In vigoare",c:"vr"}],
+  q:"Care este abordarea corecta a programului de intarcare conform noilor reglementari UE?",
   d:[
    {t:"Uscare selectiva: antibiotice NUMAI la vacile cu NCS ridicat sau CMT pozitiv + sigilant intern (teat sealant) la toate vacile",ok:1,o:"CORECT! Regulamentul UE 2019/6 (in vigoare din 2022) interzice antibioticele preventive de rutina. Abordarea corecta: 1) Antibiotice NUMAI la vacile infectate (NCS ridicat/CMT pozitiv); 2) Sigilant intern la TOATE vacile pentru protectie mecanica; 3) Monitorizare NCS dupa fatare."},
    {t:"Continuarea programului anterior - antibiotice la toate vacile indiferent de NCS",ok:0,o:"INCORECT si ilegal conform Regulamentului UE 2019/6 in vigoare din 2022. Antibioticele preventive de rutina sunt interzise pentru a combate rezistenta antimicrobiana."},
-   {t:"Nicio interventie la uscare - natural",ok:0,o:"GRESIT. Perioada de uscare are cel mai mare risc de noi infectii mamare. Cel putin sigilantul intern este recomandat la toate vacile pentru a preveni patrunderea bacteriilor."},
-   {t:"Tratament homeopatic la toate vacile + dieta speciala de uscare",ok:0,o:"INSUFICIENT stiintific. Protocoalele bazate pe dovezi (antibiotice selective + sigilant) sunt standardul profesional recunoscut."}
+   {t:"Nicio interventie la intarcare - natural",ok:0,o:"GRESIT. Perioada de intarcare are cel mai mare risc de noi infectii mamare. Cel putin sigilantul intern este recomandat la toate vacile pentru a preveni patrunderea bacteriilor."},
+   {t:"Tratament homeopatic la toate vacile + dieta speciala de intarcare",ok:0,o:"INSUFICIENT stiintific. Protocoalele bazate pe dovezi (antibiotice selective + sigilant) sunt standardul profesional recunoscut."}
   ]},
  {t:"Caz 8 - Vaca repetitoare: infertilitate",sb:"Medic veterinar - Ing. zootehnist",bg:"Reproductie",
   cx:"Vaca nr. 158 (Holstein, 4 ani, lactatia 2) a fost insamantata de 4 ori fara succes. Prima insamantare a fost la 75 zile postpartum. BCS la fatare: 2.3. Productie: 38 L/zi varf. Examenul ginecologic actual la 180 zile postpartum: ovar drept cu folicul de 2.2 cm, uter cu tonus redus, mucoasa rozata.",
@@ -508,20 +569,30 @@ var SC=[
   v:[{n:"Prevalenta",v:"27% lot",c:"vr"},{n:"Scor locomotor",v:"Grad 2-3",c:"va"},{n:"Zile postpartum",v:"30-90 zile",c:"va"},{n:"Tip adapost",v:"Placi cauciuc",c:"va"},{n:"Fatari",v:"Primipare",c:"va"},{n:"Dieta schimbata",v:"3 sapt. antes",c:"vr"}],
   q:"Care sunt cei mai probabili factori cauzali si prima interventie?",
   d:[
-   {t:"Laminta subacuta de ratie (SARA) + stres de tranzitie la primipare + examinare podologica + toaleta copitelor + ajustare pH rumen",ok:1,o:"CORECT! Epidemia de laminta la primipare postpartum este clasica pentru acidoza ruminala subacuta (SARA): tranzitia brusca la dieta bogata in concentrate, stresul periparturient, plus schimbarea tipului de pardoseala. Interventii: examinare si toaleta copitelor la toate vacile din lot, verificarea pH-ului ruminal (probe fluide ruminal - pH normal 6.2-6.8), ajustarea ratiei cu mai mult furaj fibros si tampon (bicarbonat sodiu 150 g/cap/zi)."},
-   {t:"Infectie bacteriana a copitelor (panariti) - antibioterapie sistemica la toate vacile",ok:0,o:"Panaritiul are simptome diferite: umflarea spatiului interdigital, secretii urut mirositoare, de regula 1-2 vaci. O epidemie de 27% din lot indica o cauza nutritionala/manageriala, nu infectie bacteriana."},
+   {t:"Laminta subacuta de ratie (SARA) + stres de tranzitie la primipare + examinare podologica + toaleta onglonelor + ajustare pH rumen",ok:1,o:"CORECT! Epidemia de laminta la primipare postpartum este clasica pentru acidoza ruminala subacuta (SARA): tranzitia brusca la dieta bogata in concentrate, stresul periparturient, plus schimbarea tipului de pardoseala. Interventii: examinare si toaleta onglonelor la toate vacile din lot, verificarea pH-ului ruminal (probe fluide ruminal - pH normal 6.2-6.8), ajustarea ratiei cu mai mult furaj fibros si tampon (bicarbonat sodiu 150 g/cap/zi)."},
+   {t:"Infectie bacteriana a onglonelor (panariti) - antibioterapie sistemica la toate vacile",ok:0,o:"Panaritiul are simptome diferite: umflarea spatiului interdigital, secretii urut mirositoare, de regula 1-2 vaci. O epidemie de 27% din lot indica o cauza nutritionala/manageriala, nu infectie bacteriana."},
    {t:"Pardoseala alunecoasa - inlocuire imediata placi cauciuc",ok:0,o:"Placile de cauciuc sunt de fapt o imbunatatire fata de beton. Problema este nutritionala (SARA) - schimbarea pardoselii nu rezolva cauza de baza."},
-   {t:"Deficit de biotina si zinc - suplimentare minerala timp de 30 zile",ok:0,o:"Deficientele de biotina si zinc pot contribui la calitatea copitei pe termen lung, dar nu cauzeaza laminta acuta in 3-4 saptamani. Cauza imediata este SARA si stresul de tranzitie."}
+   {t:"Deficit de biotina si zinc - suplimentare minerala timp de 30 zile",ok:0,o:"Deficientele de biotina si zinc pot contribui la calitatea onglonului pe termen lung, dar nu cauzeaza laminta acuta in 3-4 saptamani. Cauza imediata este SARA si stresul de tranzitie."}
   ]},
  {t:"Caz 10 - Planificare preventie cetoza in ferma",sb:"Medic veterinar - Ing. zootehnist",bg:"Preventie",
-  cx:"Ferma are 280 vaci in lactatie si o prevalenta a cetotei subclinice de 32% in primele 30 zile postpartum (BHBA mai mare de 1.0 mmol/L la screening). Pierderile estimate: 180 euro/vaca afectata. BCS mediu la uscare: 3.8. Rata de insemantare la prima monta: 42%. Ferma doreste implementarea unui program de preventie.",
-  v:[{n:"Cetoza subclinica",v:"32% turma",c:"vr"},{n:"Pierdere/vaca",v:"180 euro",c:"vr"},{n:"BCS uscare",v:"3.8 (prea mare)",c:"vr"},{n:"Rata conc. 1",v:"42%",c:"vr"},{n:"Vaci lactatie",v:"280 cap",c:"vg"},{n:"Pierdere totala",v:"~16.000 euro",c:"vr"}],
+  cx:"Ferma are 280 vaci in lactatie si o prevalenta a cetotei subclinice de 32% in primele 30 zile postpartum (BHBA mai mare de 1.0 mmol/L la screening). Pierderile estimate: 180 euro/vaca afectata. BCS mediu la intarcare: 3.8. Rata de insemantare la prima monta: 42%. Ferma doreste implementarea unui program de preventie.",
+  v:[{n:"Cetoza subclinica",v:"32% turma",c:"vr"},{n:"Pierdere/vaca",v:"180 euro",c:"vr"},{n:"BCS intarcare",v:"3.8 (prea mare)",c:"vr"},{n:"Rata conc. 1",v:"42%",c:"vr"},{n:"Vaci lactatie",v:"280 cap",c:"vg"},{n:"Pierdere totala",v:"~16.000 euro",c:"vr"}],
   q:"Care este programul de preventie cu cel mai mare impact pentru reducerea cetotei subclinice?",
   d:[
-   {t:"Controlul BCS la uscare (max 3.5) + ratie de tranzitie 3 saptamani prepartum + screening BHBA la toate vacile la 3-7 zile postpartum + tratament preventiv propilen glicol la riscante",ok:1,o:"CORECT! Programul complet de preventie a cetotei: 1) BCS la uscare max 3.5 (evita sindromul vacii grase); 2) Ratie de tranzitie (21 zile prepartum) bogata in propilen glicol si colina protejata; 3) Screening BHBA la toate vacile la 3-7 zile postpartum; 4) Tratament preventiv cu propilen glicol 300 mL/zi x 5 zile la vacile cu BHBA 1.0-2.0 mmol/L. Reducerea prevalentei de la 32% la sub 15% poate economisi peste 8.000 euro/an."},
-   {t:"Administrare propilen glicol la toate vacile in primele 10 zile postpartum",ok:0,o:"Partial corect dar ineficient economic. Tratamentul de masa este mai scump decat un program de screening + tratament tintit. In plus, nu rezolva problema de baza (BCS prea mare la uscare si tranzitia necorespunzatoare)."},
+   {t:"Controlul BCS la intarcare (max 3.5) + ratie de tranzitie 3 saptamani prepartum + screening BHBA la toate vacile la 3-7 zile postpartum + tratament preventiv propilen glicol la riscante",ok:1,o:"CORECT! Programul complet de preventie a cetotei: 1) BCS la intarcare max 3.5 (evita sindromul vacii grase); 2) Ratie de tranzitie (21 zile prepartum) bogata in propilen glicol si colina protejata; 3) Screening BHBA la toate vacile la 3-7 zile postpartum; 4) Tratament preventiv cu propilen glicol 300 mL/zi x 5 zile la vacile cu BHBA 1.0-2.0 mmol/L. Reducerea prevalentei de la 32% la sub 15% poate economisi peste 8.000 euro/an."},
+   {t:"Administrare propilen glicol la toate vacile in primele 10 zile postpartum",ok:0,o:"Partial corect dar ineficient economic. Tratamentul de masa este mai scump decat un program de screening + tratament tintit. In plus, nu rezolva problema de baza (BCS prea mare la intarcare si tranzitia necorespunzatoare)."},
    {t:"Suplimentare vitamina B12 si B3 (niacina) la intreaga turma",ok:0,o:"Niacina are un efect modest in preventie, dar nu poate compensa deficitul energetic major. Nu este suficienta ca singura interventie la o ferma cu prevalenta de 32%."},
    {t:"Reducerea productiei prin schimbarea ratiei - mai putine concentrate",ok:0,o:"Contraindicat. Reducerea brusca a concentratelor la vacile in productie poate agrava balanta energetica negativa si creste riscul de cetoza. Nutritia de tranzitie adecvata, nu restrictia, este solutia."}
+  ]},
+ {t:"Caz 11 - Decizie de insamantare la moment optim",sb:"Operator insamantari artificiale - Medic veterinar - Specialist PLF",bg:"Reproductie",
+  cx:"Vaca nr. 204 (Holstein, 3 ani, lactatia 2, 65 zile postpartum). Senzorul de activitate a generat o alerta de estru: crestere brusca a activitatii cu +260% fata de media individuala, incepand azi dimineata la ora 06:00. La examinare, mucusul cervical este clar si filant. Operatorul de insamantari artificiale este disponibil, iar materialul seminal congelat este in container.",
+  v:[{n:"Activitate",v:"+260%",c:"vr"},{n:"Debut estru",v:"06:00 azi",c:"va"},{n:"Zile postpartum",v:"65 zile",c:"vg"},{n:"Mucus",v:"Clar, filant",c:"vg"},{n:"IA anterioare",v:"0",c:"vg"},{n:"BCS",v:"2.9",c:"vg"}],
+  q:"Care este decizia corecta privind momentul si tehnica de insamantare?",
+  d:[
+   {t:"Insamantare in aceeasi seara (regula AM-PM), tehnica recto-cervicala, dupa decongelarea paietei 30-40 s la 35-37 C",ok:1,o:"CORECT! Estru detectat dimineata -> insamantare in aceeasi seara, conform regulii AM-PM. Ovulatia survine la ~24-32 ore de la debutul estrului, deci depunerea semintei spre finalul estrului maximizeaza fertilitatea. Decongelare 30-40 s la 35-37 C, folosire imediata, depunere in corpul uterin imediat dupa cervix. BCS 2.9 si mucusul filant sustin un estru fertil."},
+   {t:"Insamantare imediata, dimineata, la prima alerta a senzorului",ok:0,o:"SUBOPTIM. Insamantarea prea devreme fata de ovulatie reduce rata de conceptie. Conform regulii AM-PM, un estru observat dimineata se insamanteaza seara."},
+   {t:"Asteptare 48 ore pentru confirmarea estrului printr-o a doua alerta",ok:0,o:"GRESIT. Fereastra fertila se inchide. Asteptarea pierde ovulatia acestui ciclu, iar urmatoarea sansa apare abia peste ~21 zile."},
+   {t:"Initierea unui protocol Ovsynch de 10 zile in loc de insamantare acum",ok:0,o:"INUTIL acum. Vaca este deja in estru natural, detectat clar de senzori - se insamanteaza la moment fix prin regula AM-PM. Ovsynch/TAI se foloseste cand estrul NU este detectat sau la vacile-problema."}
   ]}
 ];
 
@@ -535,7 +606,7 @@ function M(i){
   gM=i; chk();
 }
 function R(i){
-  for(var k=0;k<5;k++) g("RC"+k).classList.remove("on");
+  for(var k=0;k<6;k++) g("RC"+k).classList.remove("on");
   g("RC"+i).classList.add("on");
   gR=i; chk();
 }
@@ -592,6 +663,8 @@ function drawQ(){
   }
   h+="</div>";
   g("QA").innerHTML=h;
+  if(g("QPREV")) g("QPREV").disabled=(cQ===0);
+  if(g("QNEXT")) g("QNEXT").disabled=(cQ===Q.length-1);
 }
 
 function useH(i){hn[i]=1;drawQ();}
@@ -632,6 +705,8 @@ function drawS(){
   h+="</div></div></div>";
   g("SA").innerHTML=h;
   drawDots();
+  if(g("SPREV")) g("SPREV").disabled=(cS===0);
+  if(g("SNEXT")) g("SNEXT").disabled=(cS===SC.length-1);
 }
 function ansS(i){
   if(sA[cS]>=0) return;
@@ -693,11 +768,16 @@ function RES(){
 }
 
 function STUDY(){hide("C"); show("B"); ST("I");}
+function HOME(){
+  hide("B"); hide("C"); show("A");
+  window.scrollTo(0,0);
+}
 function RESTART(){
-  hide("C"); show("A");
+  hide("C"); hide("B"); show("A");
+  window.scrollTo(0,0);
   gM=-1; gR=-1;
   for(var k=0;k<3;k++) g("MC"+k).classList.remove("on");
-  for(var k=0;k<5;k++) g("RC"+k).classList.remove("on");
+  for(var k=0;k<6;k++) g("RC"+k).classList.remove("on");
   g("BG").disabled=true;
 }
 </script>
