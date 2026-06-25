@@ -769,14 +769,14 @@ function updH(){
 }
 
 function RES(){
-  var qc=0; for(var i=0;i<qA.length;i++) if(qA[i]>=0&&qA[i]===Q[i].a) qc++;
-  var ss=0; for(var j=0;j<sA.length;j++) if(sA[j]>=0&&SC[j].d[sA[j]].ok) ss++;
-  var tot=Q.length+SC.length;
+  var qc=0,qAtt=0; for(var i=0;i<qA.length;i++){ if(qA[i]>=0){ qAtt++; if(qA[i]===Q[i].a) qc++; } }
+  var ss=0,sAtt=0; for(var j=0;j<sA.length;j++){ if(sA[j]>=0){ sAtt++; if(SC[j].d[sA[j]].ok) ss++; } }
+  var att=qAtt+sAtt;
   var cor=qc+ss;
-  var pct=Math.round(cor/tot*100);
+  var pct=att>0?Math.round(cor/att*100):0;
   g("RP").textContent=sc;
-  g("RT").textContent=pct>=80?"&#127942; Expert MooLab!":pct>=60?"&#128077; Bun start! Continua!":"&#128218; Mai studiaza - vei reusi!";
-  g("RS").textContent=cor+" corecte din "+tot+" ("+pct+"% acuratete)";
+  g("RT").innerHTML=pct>=80?"&#127942; Expert MooLab!":pct>=60?"&#128077; Bun start! Continua!":"&#128218; Mai studiaza - vei reusi!";
+  g("RS").textContent=cor+" corecte din "+att+" raspunse ("+pct+"% acuratete)";
   g("RQ").textContent=qc+"/"+Q.length;
   g("RSC").textContent=ss+"/"+SC.length;
   g("RPCT").textContent=pct+"%";
