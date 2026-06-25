@@ -46,6 +46,7 @@ html,body{min-height:100vh;font-family:var(--fn);color:var(--tx);}
 .tagline{font-size:19px;color:rgba(255,255,255,.88);line-height:1.7;max-width:580px;margin:0 auto 44px;text-align:center;text-shadow:0 1px 8px rgba(0,0,0,.25);}
 
 .slbl{font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:3px;color:rgba(255,255,255,.7);margin-bottom:14px;}
+.seclbl{display:inline-block;font-size:17px;font-weight:900;text-transform:uppercase;letter-spacing:2px;color:#fff;background:rgba(15,110,86,.62);border:2px solid rgba(255,255,255,.4);padding:9px 20px;border-radius:99px;margin-bottom:18px;text-shadow:0 1px 6px rgba(0,0,0,.45);box-shadow:0 6px 20px rgba(8,40,22,.35);}
 
 /* mode cards */
 .mgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:40px;}
@@ -298,7 +299,7 @@ html,body{min-height:100vh;font-family:var(--fn);color:var(--tx);}
   </div>
   <p class="tagline">Platforma educationala pentru sanatatea si bunastarea bovinelor &#8212; testeaza-ti cunostintele si rezolva cazuri clinice reale din fermele de vaci de lapte.</p>
 
-  <div class="slbl">Alege modul de joc</div>
+  <div class="seclbl">Alege modul de joc</div>
   <div class="mgrid" id="MG">
     <div class="mcard" id="MC0" onclick="M(0)">
       <span class="ico">&#129504;</span>
@@ -317,7 +318,7 @@ html,body{min-height:100vh;font-family:var(--fn);color:var(--tx);}
     </div>
   </div>
 
-  <div class="slbl">Alege rolul tau in ferma</div>
+  <div class="seclbl">Alege rolul tau in ferma</div>
   <div class="rgrid" id="RG">
     <div class="rcard rc-vet" id="RC0" onclick="R(0)">
       <div class="rcard-ico-wrap">&#127973;&#65039;</div>
@@ -453,6 +454,7 @@ html,body{min-height:100vh;font-family:var(--fn);color:var(--tx);}
     <div class="bgs" id="RB"></div>
     <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
       <button class="btnp" onclick="RESTART()">&#128257; Joaca din nou</button>
+      <button class="btns" onclick="HOME()">&#127968; Acasa</button>
       <button class="btns" onclick="STUDY()">&#128218; Studiaza concepte</button>
     </div>
   </div>
