@@ -359,6 +359,7 @@ html,body{min-height:100vh;font-family:var(--fn);color:var(--tx);}
 <div class="mi">
   <div class="topbar">
     <div class="tlogo" onclick="HOME()" title="Inapoi la ecranul principal"><div class="tlogo-ico">&#128004;</div>MooLab</div>
+    <button class="homebtn" id="BACKB" onclick="BACK()" disabled>&#8592; Inapoi</button>
     <button class="homebtn" onclick="HOME()">&#127968; Acasa</button>
     <span class="pill pg" id="PR">-</span>
     <span class="pill pb" id="PM">-</span>
@@ -398,13 +399,13 @@ html,body{min-height:100vh;font-family:var(--fn);color:var(--tx);}
   </div>
 
   <div id="PI" class="gone">
-    <div class="icard"><div class="itit">&#127777; Stres termic bovin - Indicele THI</div><img class="iimg" src="https://images.unsplash.com/photo-1516467508483-a7212febe31a?w=1000&q=75" alt="Vaci Holstein in adapost - management stres termic" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=1000&q=75'"><div class="itags"><span class="itag ig">THI &lt;68 confort</span><span class="itag ia">68-72 alerta</span><span class="itag ir">THI &gt;78 sever</span></div><div class="ibody">Formula: <b>THI = T(C) + 0.36 x Td(C) + 41.2</b>. Vacile Holstein sunt sensibile datorita metabolismului ridicat. <b>Semne:</b> respiratie &gt;60/min, productie -10-35%, consum apa +40-60%. <b>Interventii:</b> aspersoare + ventilatie fortata, bicarbonat sodiu 150-200 g/cap/zi, hranire nocturna. <b>Sisteme PLF:</b> senzorii montati pe animale detecteaza modificarile comportamentale cu 1-2 ore inainte de semnele vizibile; sistemele avansate transmit date la 15 minute.<div class="iguide">&#128214; <b>Ghid practic THI (din ghidul autorului):</b> masurati THI de 2x/zi in sezonul cald (pranz si dupa-amiaza). Pragul de actiune incepe la <b>THI 68</b>: porniti ventilatia. La <b>THI &gt;72</b> activati aspersoarele intermitent (cicluri 3 min apa / 12 min ventilatie). La <b>THI &gt;78</b> aplicati toate masurile + hranire nocturna si umbrire suplimentara. Monitorizati scorul de garbare (panting score 0-4).</div><span class="iref">Sursa: Neculai-Valeanu A.-S. (2025), "Transformarea digitala a fermelor mici si mijlocii de vaci de lapte", Presa Universitara Clujeana.</span></div></div>
+    <div class="icard"><div class="itit">&#127777; Stres termic bovin - Indicele THI</div><img class="iimg" src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=1000&q=75" alt="Vaci Holstein in adapost - management stres termic"><div class="itags"><span class="itag ig">THI &lt;68 confort</span><span class="itag ia">68-72 alerta</span><span class="itag ir">THI &gt;78 sever</span></div><div class="ibody">Formula: <b>THI = T(C) + 0.36 x Td(C) + 41.2</b>. Vacile Holstein sunt sensibile datorita metabolismului ridicat. <b>Semne:</b> respiratie &gt;60/min, productie -10-35%, consum apa +40-60%. <b>Interventii:</b> aspersoare + ventilatie fortata, bicarbonat sodiu 150-200 g/cap/zi, hranire nocturna. <b>Sisteme PLF:</b> senzorii montati pe animale detecteaza modificarile comportamentale cu 1-2 ore inainte de semnele vizibile; sistemele avansate transmit date la 15 minute.<div class="iguide">&#128214; <b>Ghid practic THI (din ghidul autorului):</b> masurati THI de 2x/zi in sezonul cald (pranz si dupa-amiaza). Pragul de actiune incepe la <b>THI 68</b>: porniti ventilatia. La <b>THI &gt;72</b> activati aspersoarele intermitent (cicluri 3 min apa / 12 min ventilatie). La <b>THI &gt;78</b> aplicati toate masurile + hranire nocturna si umbrire suplimentara. Monitorizati scorul de garbare (panting score 0-4).</div><span class="iref">Sursa: Neculai-Valeanu A.-S. (2025), "Transformarea digitala a fermelor mici si mijlocii de vaci de lapte", Presa Universitara Clujeana.</span></div></div>
     <div class="icard"><div class="itit">&#128225; Zootehnie de precizie (PLF)</div><div class="itags"><span class="itag it">Senzori individuali</span><span class="itag ib">AI/ML</span><span class="itag it">Date timp real</span></div><div class="ibody"><b>Tipuri senzori:</b> zgarda/colier cu accelerometru si giroscop, pedometru (senzor onglon), bolus ruminal (temperatura interna, pH), transponder ureche, camera termoviziune. <b>Parametri:</b> activitate fizica (pasi/ora), rumegare normala 450-600 min/zi, detectie estrus (+200-300%), alerte metabolice cu 12-24 ore avans. <b>Beneficii:</b> pierderi productie -8-14%, detectie estrus 80-95% acuratete. Sisteme comerciale integrate cu software de management al fermei.</div></div>
     <div class="icard"><div class="itit">&#128004; Bunastarea animalelor - Cele 5 Libertati</div><div class="ibody"><b>1.</b> Libertatea de foame si sete - ratie echilibrata, apa proaspata permanent<br><b>2.</b> Libertatea de disconfort - adapost adecvat, zone odihna (&gt;1.2 m2/vaca)<br><b>3.</b> Libertatea de durere si boala - prevenire activa, diagnostic rapid<br><b>4.</b> Libertatea de a exprima comportamente normale - miscare libera, socializare<br><b>5.</b> Libertatea de frica si suferinta mentala - conditii fara stres cronic<br><br><b>Indicatori:</b> BCS 2.5-3.5, IEF &lt;390 zile, mastita &lt;5%, scor locomotor grad 3+ &lt;10%.</div></div>
     <div class="icard"><div class="itit">&#129371; Calitatea laptelui - parametri UE</div><div class="ibody"><b>NCS:</b> &lt;100k/mL excelent - &lt;200k bun - 200-400k alerta - &gt;400k mastita subclinica (limita legala UE)<br><b>NTB:</b> &lt;100k/mL Clasa Extra; &lt;400k/mL Clasa I | <b>Grasime:</b> 3.5-4.5% Holstein<br><b>Proteina:</b> 3.1-3.5% | <b>Uree lapte:</b> 150-300 mg/L (echilibru proteino-energetic)</div></div>
     <div class="icard"><div class="itit">&#128137; Boli metabolice periparturiente</div><div class="itags"><span class="itag ir">Cetoza</span><span class="itag ir">Hipocalcemie</span><span class="itag ia">Distocie</span><span class="itag ir">Deplasare cheag</span></div><div class="ibody"><b>Cetoza subclinica:</b> BHBA &gt;1.0 mmol/L. Tratament: propilen glicol 300 mL/zi x 5 zile. Preventie: BCS &lt;=3.5 la fatare.<br><b>Hipocalcemie:</b> Ca &lt;1.75 mmol/L. Simptome: decubit, hipotermie. Tratament: Ca borogluconat IV LENT 400-800 mL.<br><b>Deplasare cheag stanga:</b> sunet metalic la percu-tie (ping). Interventie chirurgicala - omentopexie.</div></div>
 
-    <div class="icard"><div class="itit">&#129516; Insamantare artificiala &amp; material seminal congelat</div><img class="iimg" src="https://images.unsplash.com/photo-1605605575998-9e7a8c4c9c0a?w=1000&q=75" alt="Reproductie bovina - insamantare artificiala" onerror="this.style.display='none'"><div class="itags"><span class="itag ib">Reproductie</span><span class="itag it">Genetica</span><span class="itag ig">Biosecuritate</span></div><div class="ibody"><b>Insamantarea artificiala (IA)</b> este principala metoda de ameliorare genetica si control sanitar al reproductiei in fermele moderne. Permite folosirea materialului seminal de la tauri amelioratori testati, fara riscul transmiterii bolilor venerice.<br><br><b>Material seminal congelat:</b> pastrat in azot lichid la <b>-196&deg;C</b> in paiete de 0,25 mL. Decongelare corecta: 30-40 secunde in baie de apa la <b>35-37&deg;C</b>. Folositi imediat (in max. 15 min); nu reutilizati paietele decongelate.<br><br><b>Momentul optim (regula AM-PM):</b> vaci observate in calduri dimineata se insamanteaza seara; cele observate seara, a doua zi dimineata. Ovulatia are loc la ~24-32 ore de la debutul estrului. <b>Tehnica recto-cervicala:</b> depunerea semintei in corpul uterin, imediat dupa cervix.<br><br><b>Detectie estru cu senzori PLF:</b> cresterea activitatii cu +200-300% semnaleaza fereastra de insamantare cu 80-95% acuratete - baza protocoalelor de <b>insamantare la moment fix (Ovsynch, TAI)</b>.<div class="iguide">&#129351; <b>KPI reproductie:</b> rata de conceptie la prima IA &gt;40%, indice de insamantare &lt;2,0, IEF 365-390 zile. Rata de detectie a estrului &gt;70% (cu senzori 80-95%).</div></div></div>
+    <div class="icard"><div class="itit">&#129516; Insamantare artificiala &amp; material seminal congelat</div><img class="iimg" style="object-position:center 72%" src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=1000&q=75" alt="Vitel si vaci - reproductie bovina"><div class="itags"><span class="itag ib">Reproductie</span><span class="itag it">Genetica</span><span class="itag ig">Biosecuritate</span></div><div class="ibody"><b>Insamantarea artificiala (IA)</b> este principala metoda de ameliorare genetica si control sanitar al reproductiei in fermele moderne. Permite folosirea materialului seminal de la tauri amelioratori testati, fara riscul transmiterii bolilor venerice.<br><br><b>Material seminal congelat:</b> pastrat in azot lichid la <b>-196&deg;C</b> in paiete de 0,25 mL. Decongelare corecta: 30-40 secunde in baie de apa la <b>35-37&deg;C</b>. Folositi imediat (in max. 15 min); nu reutilizati paietele decongelate.<br><br><b>Momentul optim (regula AM-PM):</b> vaci observate in calduri dimineata se insamanteaza seara; cele observate seara, a doua zi dimineata. Ovulatia are loc la ~24-32 ore de la debutul estrului. <b>Tehnica recto-cervicala:</b> depunerea semintei in corpul uterin, imediat dupa cervix.<br><br><b>Detectie estru cu senzori PLF:</b> cresterea activitatii cu +200-300% semnaleaza fereastra de insamantare cu 80-95% acuratete - baza protocoalelor de <b>insamantare la moment fix (Ovsynch, TAI)</b>.<div class="iguide">&#129351; <b>KPI reproductie:</b> rata de conceptie la prima IA &gt;40%, indice de insamantare &lt;2,0, IEF 365-390 zile. Rata de detectie a estrului &gt;70% (cu senzori 80-95%).</div></div></div>
 
     <div class="icard"><div class="itit">&#128679; Bariere in adoptarea tehnologiilor digitale</div><div class="itags"><span class="itag ir">Cercetare AOSR</span><span class="itag ia">Ferme mici si mijlocii</span></div><div class="ibody">Investigatie calitativa in fermele romanesti de vaci de lapte a identificat urmatoarele bariere principale in adoptarea solutiilor digitale/inteligente:<ul class="barlist"><li><b>Costul ridicat al investitiei initiale</b> - bariera de capital de ~30.000-36.000 lei (coliere, gateway, software, training); raport cost-beneficiu perceput ca incert.</li><li><b>Acces precar la internet in mediul rural</b> - ~70% din zonele rurale sunt subacoperite sau cu acces limitat la internet de mare viteza.</li><li><b>Lipsa interoperabilitatii</b> intre echipamente si sisteme software de la furnizori diferiti.</li><li><b>Lipsa competentelor digitale</b> si a suportului/instruirii tehnice in randul personalului.</li><li><b>Reticenta si rezistenta la schimbare</b> - bariere cognitive si culturale, lipsa unei imagini de ansamblu asupra performantei.</li><li><b>Infrastructura invechita</b> si lipsa unui cadru clar de reglementare privind datele proprietare.</li></ul><div class="iguide">&#128161; <b>Cum se depasesc:</b> finantare nerambursabila (granturi 50-85%), solutii modulare cu amortizare in timp, formare prin parteneriate cu centre de cercetare si universitati, pilotare la scara mica inainte de extindere.</div><span class="iref">Sursa: Proiect AOSR - "Transformarea digitala a fermelor mici si mijlocii de vaci de lapte" (Neculai-Valeanu A.-S.).</span></div></div>
 
@@ -461,6 +462,7 @@ html,body{min-height:100vh;font-family:var(--fn);color:var(--tx);}
 <script>
 var gM=-1,gR=-1,cQ=0,cS=0,sc=0;
 var qA=[],sA=[],hn=[];
+var qOrder=[],nav=[],cur="A";
 var MN=["Quiz rapid","Scenarii clinice","Complet"];
 var RN=["Medic veterinar","Ing. zootehnist","Fermier","Teh. calitate lapte","Specialist PLF","Operator insamantari artificiale"];
 var L=["A","B","C","D"];
@@ -619,12 +621,14 @@ function GO(){
   for(var i=0;i<Q.length;i++){qA.push(-1);hn.push(0);}
   for(var j=0;j<SC.length;j++){sA.push(-1);}
   cQ=0; cS=0; sc=0;
+  qOrder=buildQOrder();
+  nav=["A"]; cur="";
   hide("A"); show("B");
   ST(gM===1?"S":"Q");
   drawQ(); drawS(); updH();
 }
 
-function ST(t){
+function switchTab(t){
   var panels=["Q","S","I","T"];
   var tabs=["TQ","TS","TI","TT"];
   for(var i=0;i<panels.length;i++){
@@ -632,11 +636,33 @@ function ST(t){
     else{hide("P"+panels[i]);g(tabs[i]).classList.remove("on");}
   }
 }
+function ST(t){ switchTab(t); pushNav("B"+t); }
+function pushNav(v){ if(cur&&cur!==v) nav.push(cur); cur=v; updBack(); }
+function updBack(){ var b=g("BACKB"); if(b) b.disabled=(nav.length===0); }
+function BACK(){
+  if(!nav.length) return;
+  var v=nav.pop();
+  if(v==="A"){ hide("B");hide("C");show("A"); cur="A"; }
+  else if(v==="C"){ hide("B");show("C"); cur="C"; }
+  else if(v.charAt(0)==="B"){ hide("C");show("B"); switchTab(v.substring(1)); cur=v; }
+  window.scrollTo(0,0); updBack();
+}
+function buildQOrder(){
+  var idx=[]; for(var i=0;i<Q.length;i++) idx.push(i);
+  for(var i=idx.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)); var t=idx[i]; idx[i]=idx[j]; idx[j]=t; }
+  if(gR===5){
+    var pri=[],rest=[];
+    for(var k=0;k<idx.length;k++){ var c=Q[idx[k]].c; if(c==="Reproductie"||c==="Insamantare artificiala") pri.push(idx[k]); else rest.push(idx[k]); }
+    idx=pri.concat(rest);
+  }
+  return idx;
+}
 
 function drawQ(){
-  var q=Q[cQ];
-  var done=(qA[cQ]>=0);
-  var ch=qA[cQ];
+  var qi=qOrder.length?qOrder[cQ]:cQ;
+  var q=Q[qi];
+  var done=(qA[qi]>=0);
+  var ch=qA[qi];
   var cnt=0;
   for(var x=0;x<qA.length;x++) if(qA[x]>=0) cnt++;
   g("QPB").style.width=Math.round(cnt/Q.length*100)+"%";
@@ -655,8 +681,8 @@ function drawQ(){
     h+="<button class='"+cls+"' "+dis+" onclick='ansQ("+i+")'><span class='oltr'>"+L[i]+".</span>"+q.o[i]+"</button>";
   }
   h+="</div>";
-  if(!done&&!hn[cQ]) h+="<button class='hbtn' onclick='useH("+cQ+")'>&#128161; Indiciu (&#8722;3 pct)</button>";
-  if(!done&&hn[cQ]) h+="<div class='hbox'>&#128161; "+q.h+"</div>";
+  if(!done&&!hn[qi]) h+="<button class='hbtn' onclick='useH("+qi+")'>&#128161; Indiciu (&#8722;3 pct)</button>";
+  if(!done&&hn[qi]) h+="<div class='hbox'>&#128161; "+q.h+"</div>";
   if(done){
     var fc=(ch===q.a)?"fbok":"fbno";
     h+="<div class='fb "+fc+"'>"+(ch===q.a?"&#10003; Corect! ":"&#10007; Gresit. ")+q.e+"</div>";
@@ -669,11 +695,12 @@ function drawQ(){
 
 function useH(i){hn[i]=1;drawQ();}
 function ansQ(i){
-  if(qA[cQ]>=0) return;
-  qA[cQ]=i;
-  var pts=Q[cQ].p-(hn[cQ]?3:0);
+  var qi=qOrder.length?qOrder[cQ]:cQ;
+  if(qA[qi]>=0) return;
+  qA[qi]=i;
+  var pts=Q[qi].p-(hn[qi]?3:0);
   if(pts<0)pts=0;
-  if(i===Q[cQ].a) sc+=pts;
+  if(i===Q[qi].a) sc+=pts;
   drawQ(); updH();
 }
 function nQ(){if(cQ<Q.length-1){cQ++;drawQ();}}
@@ -770,6 +797,7 @@ function RES(){
 function STUDY(){hide("C"); show("B"); ST("I");}
 function HOME(){
   hide("B"); hide("C"); show("A");
+  nav=[]; cur="A"; updBack();
   window.scrollTo(0,0);
 }
 function RESTART(){
@@ -779,6 +807,7 @@ function RESTART(){
   for(var k=0;k<3;k++) g("MC"+k).classList.remove("on");
   for(var k=0;k<6;k++) g("RC"+k).classList.remove("on");
   g("BG").disabled=true;
+  nav=[]; cur="A"; updBack();
 }
 </script>
 </body>
